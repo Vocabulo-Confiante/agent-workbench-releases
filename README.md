@@ -1,5 +1,7 @@
 # Agent Workbench
 
+[![Latest release](https://img.shields.io/github/v/release/Vocabulo-Confiante/agent-workbench-releases?include_prereleases&label=latest%20release)](https://github.com/Vocabulo-Confiante/agent-workbench-releases/releases/latest)
+
 A desktop workbench for running and supervising CLI coding-agent sessions.
 Bring your favorite CLI agent: each session runs in a real terminal, and the
 workbench adds the supervision layer a plain terminal lacks.
