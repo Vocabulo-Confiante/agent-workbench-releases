@@ -4,7 +4,12 @@ A desktop workbench for running and supervising CLI coding-agent sessions.
 Bring your favorite CLI agent: each session runs in a real terminal, and the
 workbench adds the supervision layer a plain terminal lacks.
 
-![Agent Workbench in action](assets/workbench.gif)
+## A day in the workbench
+
+Import a repository, start a session, let the agent work, review the diff,
+and browse the agent definitions available to the project:
+
+![Agent Workbench workflow](assets/workbench.gif)
 
 ## What it does
 
@@ -16,18 +21,26 @@ workbench adds the supervision layer a plain terminal lacks.
   rewritten; you interact with the agent exactly as you would in a terminal.
 - **Multi-pane layouts.** Run several sessions side by side and switch
   layouts from the title bar.
-- **Diffs and CI at a glance.** Live diff summaries against a baseline,
-  the CI status of the linked pull request, and one click to open the
-  repository in your IDE.
+- **Diffs and CI at a glance.** Live diff summaries against a baseline, a
+  full diff viewer, the CI status of the linked pull request, and one click
+  to open the repository in your IDE.
 - **Forge integration.** Sign in with GitHub or GitLab through credential
   profiles you control. Token scopes are documented in the app, with the
   reason each one is needed.
 - **Agent Roster.** Every reusable agent definition visible to a repository,
   presented as a browsable team roster with model, scope, and tool details.
-- **PR Hero.** A companion game window where your open pull requests become
-  monsters your hero fights. Merging work levels the hero up.
 - **Cost tracking, MCP inspection, themes, text scaling, and localization**
   (English and Portuguese) are built in.
+
+## PR Hero
+
+A companion mini game that turns your open pull requests into monsters along
+a road. Create a hero, pick a class, and watch your team fight: teammates
+appear as allies with the role they played on each pull request, CI progress
+chips away at monster health, and merging a pull request defeats its monster,
+awarding experience, loot, and coins for the shop.
+
+![PR Hero](assets/pr-hero.gif)
 
 ## Download
 
@@ -61,12 +74,7 @@ chmod +x Agent.Workbench-*.AppImage && ./Agent.Workbench-*.AppImage
 sudo dpkg -i agent-workbench_*_amd64.deb
 ```
 
-## First launch
-
-A short guided tour introduces each part of the interface the first time you
-open the app.
-
-![Guided tour](assets/tour.gif)
+## Requirements
 
 The settings screen detects the tools already on your machine and can
 validate a custom path or install a missing one with your system's package
