@@ -1,6 +1,6 @@
 # Agent Workbench
 
-[![Latest release](https://img.shields.io/github/v/release/Vocabulo-Confiante/agent-workbench-releases?include_prereleases&label=latest%20release)](https://github.com/Vocabulo-Confiante/agent-workbench-releases/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/Vocabulo-Confiante/agent-workbench-releases?label=latest%20release)](https://github.com/Vocabulo-Confiante/agent-workbench-releases/releases/latest)
 
 A desktop workbench for running and supervising CLI coding-agent sessions.
 Bring your favorite CLI agent: each session runs in a real terminal, and the
@@ -91,8 +91,8 @@ manager. None of them are required to start the app:
 
 Versions follow `v<major>.<minor>.<patch>` tags. Release notes are generated
 from the commit history and grouped by change type, so they reflect exactly
-what shipped. Releases marked pre-release are early builds published before
-the first stable version.
+what shipped. Versions below 1.0 are early builds published ahead of the
+first stable version.
 
 Every release is built and published by CI. The pipeline runs the full test
 suite and real-machine install integration tests on macOS, Windows, and
