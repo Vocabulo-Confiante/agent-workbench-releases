@@ -1,22 +1,38 @@
 # Agent Workbench
 
-A desktop workbench for running and supervising coding-agent CLI sessions
-(Claude Code, Codex, Gemini, Aider, OpenCode). Each session is a real terminal;
-around it the app adds what a terminal alone cannot: live status with
-notifications (running, waiting for input, done, error), per-repository
-grouping with GitHub/GitLab sign-in, diff summaries against a baseline, CI
-status of the linked PR, MCP server inspection, cost tracking, and PR Hero, a
-game window where your open pull requests are monsters your hero fights.
+A desktop workbench for running and supervising CLI coding-agent sessions.
+Bring your favorite CLI agent: each session runs in a real terminal, and the
+workbench adds the supervision layer a plain terminal lacks.
 
-This repository hosts the public downloads and release notes. The source code
-lives in a private repository; this is the place to get the app and follow
-what changed between versions.
+![Agent Workbench in action](assets/workbench.gif)
+
+## What it does
+
+- **Sessions per repository.** Import a repository and it becomes a group.
+  Every agent session you start there is tracked with its branch, live status
+  (running, waiting for input, done, error), and desktop notifications when a
+  session needs you.
+- **Real terminals.** Each session is a full PTY. Nothing is proxied or
+  rewritten; you interact with the agent exactly as you would in a terminal.
+- **Multi-pane layouts.** Run several sessions side by side and switch
+  layouts from the title bar.
+- **Diffs and CI at a glance.** Live diff summaries against a baseline,
+  the CI status of the linked pull request, and one click to open the
+  repository in your IDE.
+- **Forge integration.** Sign in with GitHub or GitLab through credential
+  profiles you control. Token scopes are documented in the app, with the
+  reason each one is needed.
+- **Agent Roster.** Every reusable agent definition visible to a repository,
+  presented as a browsable team roster with model, scope, and tool details.
+- **PR Hero.** A companion game window where your open pull requests become
+  monsters your hero fights. Merging work levels the hero up.
+- **Cost tracking, MCP inspection, themes, text scaling, and localization**
+  (English and Portuguese) are built in.
 
 ## Download
 
-Grab the installer for your platform from the
+Get the installer for your platform from the
 [**latest release**](https://github.com/Vocabulo-Confiante/agent-workbench-releases/releases/latest).
-Every release ships all platforms:
 
 | Platform | File | Notes |
 |---|---|---|
@@ -25,61 +41,56 @@ Every release ships all platforms:
 | Linux (x64) | `Agent.Workbench-<version>.AppImage` | Portable, no install |
 | Linux (Debian/Ubuntu) | `agent-workbench_<version>_amd64.deb` | System package |
 
-All previous versions stay available on the
+All previous versions remain available on the
 [releases page](https://github.com/Vocabulo-Confiante/agent-workbench-releases/releases).
 
 ## Installing
 
-### macOS
+**macOS.** Open the `.dmg` and drag Agent Workbench to Applications. The
+build is Developer ID signed and notarized by Apple and opens without
+warnings.
 
-Open the `.dmg` and drag **Agent Workbench** to Applications. The build is
-Developer ID signed and notarized by Apple, so it opens without warnings.
+**Windows.** Run the installer. SmartScreen may warn on first launch until
+the build is Authenticode signed: choose More info, then Run anyway.
 
-### Windows
-
-Run the installer. SmartScreen may warn on first launch until the build is
-Authenticode signed: click **More info**, then **Run anyway**.
-
-### Linux
-
-AppImage: make it executable and run it.
+**Linux.** Make the AppImage executable and run it, or install the package:
 
 ```bash
-chmod +x Agent.Workbench-*.AppImage
-./Agent.Workbench-*.AppImage
-```
-
-Debian/Ubuntu package:
-
-```bash
+chmod +x Agent.Workbench-*.AppImage && ./Agent.Workbench-*.AppImage
+# or
 sudo dpkg -i agent-workbench_*_amd64.deb
 ```
 
-## Requirements
+## First launch
 
-Agent Workbench supervises CLIs you already use. None are required to start
-the app, and the built-in settings screen can detect, validate, or install
-them for you:
+A short guided tour introduces each part of the interface the first time you
+open the app.
 
-- One or more agent CLIs: `claude`, `codex`, `gemini`, `aider`, `opencode`
-- `git`, plus `gh` (GitHub) or `glab` (GitLab) for forge features such as CI
-  status and PR Hero
-- Optionally an IDE launcher (`idea` or `code`) for the open-in-IDE shortcut
+![Guided tour](assets/tour.gif)
 
-## Release notes and versioning
+The settings screen detects the tools already on your machine and can
+validate a custom path or install a missing one with your system's package
+manager. None of them are required to start the app:
 
-Versions follow `v<major>.<minor>.<patch>` tags. The notes on each release are
-generated from the commit history, grouped into Features, Bug fixes,
-Performance, and so on, so they reflect exactly what shipped. Releases marked
-**pre-release** are early builds published before the first stable version.
+- Your preferred CLI coding agent
+- `git`, plus the GitHub or GitLab CLI for forge features such as CI status
+  and PR Hero
+- Optionally an IDE launcher for the open-in-IDE shortcut
 
-Every release is built and published by CI: the pipeline runs the full test
-suite plus real-machine install integration tests on macOS, Windows, and Linux
-before packaging, so a build with a broken installer never publishes.
+## Releases and versioning
+
+Versions follow `v<major>.<minor>.<patch>` tags. Release notes are generated
+from the commit history and grouped by change type, so they reflect exactly
+what shipped. Releases marked pre-release are early builds published before
+the first stable version.
+
+Every release is built and published by CI. The pipeline runs the full test
+suite and real-machine install integration tests on macOS, Windows, and
+Linux before packaging, so a build with a broken installer never publishes.
 
 ## Feedback and issues
 
 Found a bug or have a feature request? Open an issue in this repository's
 [issue tracker](https://github.com/Vocabulo-Confiante/agent-workbench-releases/issues).
-Please include your OS, the app version (visible in the title bar menu), and
-steps to reproduce.
+Please include your operating system, the app version, and steps to
+reproduce.
