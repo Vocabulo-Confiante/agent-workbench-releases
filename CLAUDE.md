@@ -6,6 +6,7 @@ the app's source is not here.
 
 - `README.md`: what the app does, PR Hero, the download table, install steps per platform,
   requirements, versioning, and where to report issues
+- `SECURITY.md`: how to report a vulnerability privately, and what the policy covers
 - `assets/workbench.gif`, `assets/pr-hero.gif`: the two recordings the README embeds
 - The installers and release notes are GitHub release assets, not files in the tree
 
