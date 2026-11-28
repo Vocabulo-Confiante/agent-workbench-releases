@@ -103,4 +103,5 @@ Linux before packaging, so a build with a broken installer never publishes.
 Found a bug or have a feature request? Open an issue in this repository's
 [issue tracker](https://github.com/Vocabulo-Confiante/agent-workbench-releases/issues).
 Please include your operating system, the app version, and steps to
-reproduce.
+reproduce. Report a security vulnerability privately instead, as
+[SECURITY.md](SECURITY.md) describes.
